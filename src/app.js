@@ -3,9 +3,10 @@ const helmet = require("helmet");
 const cors = require("cors");
 
 module.exports = class App {
-    constructor(port) {
+    constructor(port, controllers = []) {
         this.app = express();
         this.port = port;
+        this.controllers = controllers;
 
         this.initializeMiddlewares();
         this.initializeRoutes();
@@ -18,8 +19,12 @@ module.exports = class App {
     }
 
     initializeRoutes() {
-        this.app.get("/", (req, res) => {
-            res.send("Hello World");
+        this.app.get("/api/v1/", (req, res) => {
+            res.status(200).json({ message: "Demo API", version: "1.0" });
+        });
+
+        this.controllers.forEach((controller) => {
+            this.app.use("/api/v1/", controller.router);
         });
     }
 

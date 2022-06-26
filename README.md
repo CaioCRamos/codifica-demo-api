@@ -97,7 +97,7 @@ Endpoint que realiza um login bem simples baseado no `email` e `senha` fornecido
 Corpo da Requisição (`JSON`):
 ```json
 {
-    "email": "usuario1@basesociadl.org",
+    "email": "usuario1@basesocial.org",
     "senha": "base@123"
 }
 ```

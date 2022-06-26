@@ -1,5 +1,7 @@
 const App = require("./src/app");
 const UsersController = require("./src/users/users.controller");
 
-const app = new App(3000, [new UsersController()]);
+const port = parseInt(process.env.PORT || "3000");
+
+const app = new App(port, [new UsersController()]);
 app.start();

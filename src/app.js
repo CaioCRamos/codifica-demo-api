@@ -20,7 +20,7 @@ module.exports = class App {
 
     initializeRoutes() {
         this.app.get("/api/v1/", (req, res) => {
-            res.status(200).json({ message: "Demo API", version: "1.0" });
+            res.status(200).json({ nome: "Demo API", versao: "1.0" });
         });
 
         this.controllers.forEach((controller) => {

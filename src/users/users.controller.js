@@ -15,7 +15,13 @@ module.exports = class UserController {
     }
 
     getAll = async (req, res) => {
-        res.status(200).json({ message: this.repository.getAll() });
+        res.status(200).json(
+            this.repository.getAll()
+                .map(user => ({
+                    nome: user.name,
+                    email: user.login,
+                    senha: user.password
+                })));
     };
 
     authenticate = async (req, res) => {
@@ -24,7 +30,7 @@ module.exports = class UserController {
         const user = this.repository.getByLoginAndPassword(email, senha);
 
         return user
-            ? res.status(200).json({ message: "Login feito com sucesso" })
-            : res.status(404).json({ message: "Login ou senha incorretos" });
+            ? res.status(200).json({ mensagem: "Login feito com sucesso" })
+            : res.status(404).json({ mensagem: "Login ou senha incorretos" });
     };
 }

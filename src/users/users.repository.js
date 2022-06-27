@@ -5,7 +5,7 @@ module.exports = class UserRepository {
         this.users = [];
 
         for (let index = 1; index < 11; index++) {
-            this.users.push(new User(`Usuário ${index}`, `usuario${index}@basesocial.org`, "base@123"));
+            this.users.push(new User(index, `Usuário ${index}`, `usuario${index}@basesocial.org`, "base@123"));
         }
     }
 

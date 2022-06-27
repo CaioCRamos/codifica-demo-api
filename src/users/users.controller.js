@@ -18,6 +18,7 @@ module.exports = class UserController {
         res.status(200).json(
             this.repository.getAll()
                 .map(user => ({
+                    id: user.id,
                     nome: user.name,
                     email: user.login,
                     senha: user.password

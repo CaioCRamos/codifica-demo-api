@@ -1,4 +1,3 @@
-const Product = require("./products.domain");
 const ProductsJSON = require("../../data/products.json");
 
 module.exports = class ProductRepository {

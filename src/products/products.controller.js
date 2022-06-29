@@ -1,10 +1,13 @@
 const express = require("express")
+
 const ProductsRepository = require("./products.repository");
+const ProductsAdapter = require("./products.adapter");
 
 module.exports = class ProductsController {
     constructor() {
         this.router = express.Router();
         this.repository = new ProductsRepository();
+        this.adapter = new ProductsAdapter();
 
         this.initializeRoutes();
     }
@@ -18,14 +21,7 @@ module.exports = class ProductsController {
         res.status(200).json(
             this.repository
                 .getAll()
-                .map(p => ({
-                    id: p.id,
-                    nome: p.name,
-                    img: p.image,
-                    preco: p.price,
-                    categoria: p.category,
-                    descricao: p.description
-                }))
+                .map(p => this.adapter.toApiResponse(p))
         );
     }
 
@@ -35,7 +31,7 @@ module.exports = class ProductsController {
         const product = this.repository.getById(id);
 
         return product
-            ? res.status(200).json(product)
+            ? res.status(200).json(this.adapter.toApiResponse(product))
             : res.status(404).json({ mensagem: `Produto não encontrado com o ID: ${id}` });
     }
 }

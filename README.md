@@ -116,7 +116,7 @@ Resultado negativo (`404`):
 }
 ```
 
-### 4️⃣ Products
+### 4️⃣ Produtos
 Endpoint que retorna a listagem completa de produtos disponíveis.
 
 - URL: https://codifica-demo-api.herokuapp.com/api/v1/products
@@ -153,7 +153,7 @@ Resultado (`200`):
 ]
 ```
 
-### 5️⃣ Products/:id
+### 5️⃣ Produto por ID
 Endpoint que retorna um produto, de acordo com o `ID` fornecido.
 
 - URL: https://codifica-demo-api.herokuapp.com/api/v1/products/:id
@@ -182,4 +182,49 @@ Resultado (`404`):
 {
   "mensagem": "Produto não encontrado com o ID: 100"
 }
+```
+
+### 6️⃣ Produtos por Categoria
+Endpoint que retorna a listagem de produtos disponíveis por Categoria fornecida.
+
+- URL: https://codifica-demo-api.herokuapp.com/api/v1/products/category/:category
+- Verbo: `GET`
+
+Para consultar os produtos da Categoria `racao`:  
+- https://codifica-demo-api.herokuapp.com/api/v1/products/category/racao
+
+Resultado (`200`):
+```json
+[
+  {
+    "id": 0,
+    "nome": "Ração Seca Nutrilus Pro Frango & Carne para Cães Adultos",
+    "img": "https://www.petlove.com.br/images/products/250507/large/2492303_FRENTE.jpg?1635780028",
+    "preco": 169.01,
+    "categoria": "racao",
+    "descricao": "A Ração Seca Nutrilus..."
+  },
+  {
+    "id": 1,
+    "nome": "Ração Magnus Todo Dia Sabor Carne para Cães Adultos",
+    "img": "https://www.petlove.com.br/images/products/225830/large/Ra%C3%A7%C3%A3o_Magnus_Todo_Dia_Sabor_Carne_para_C%C3%A3es_Adultos_311810.jpg?1627724051",
+    "preco": 201.9,
+    "categoria": "racao",
+    "descricao": "A Ração Magnus Todo Dia..."
+  },
+  {
+    "id": 2,
+    "nome": "Ração Seca True para Cães Adultos Raças Médias e Grandes",
+    "img": "https://www.petlove.com.br/images/products/255531/product/Ra%C3%A7%C3%A3o_Seca_True_para_C%C3%A3es_Adultos_Ra%C3%A7as_M%C3%A9dias_e_Grandes_10_1KG_2638254.png?1653046196",
+    "preco": 227.92,
+    "categoria": "racao",
+    "descricao": "A Ração Seca True para Cães Adultos..."
+  },
+  ...
+]
+```
+
+Se nenhum resultado for encontrado um array vazio será retornado:
+```json
+[]
 ```

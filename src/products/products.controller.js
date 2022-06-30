@@ -29,7 +29,7 @@ module.exports = class ProductsController {
     getById = async (req, res) => {
         const { id } = req.params;
 
-        const product = this.repository.getById(id);
+        const product = this.repository.getById(parseInt(id));
 
         return product
             ? res.status(200).json(this.adapter.toApiResponse(product))

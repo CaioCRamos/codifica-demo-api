@@ -13,11 +13,10 @@ module.exports = class App {
     }
 
     initializeMiddlewares() {
-        this.app.use(helmet());
-        this.app.use(cors({
-            origin: "*",
-            optionsSuccessStatus: 200
+        this.app.use(helmet({
+            crossOriginResourcePolicy: false,
         }));
+        this.app.use(cors());
         this.app.use(express.json());
     }
 

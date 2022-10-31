@@ -15,6 +15,7 @@ module.exports = class ProductsController {
     initializeRoutes() {
         this.router.get("/products", this.getAll);
         this.router.get("/products/:id", this.getById);
+        this.router.get("/products/:id/image", this.getImageById);
         this.router.get("/products/category/:category", this.getByCategory);
     }
 
@@ -34,6 +35,14 @@ module.exports = class ProductsController {
         return product
             ? res.status(200).json(this.adapter.toApiResponse(product))
             : res.status(404).json({ mensagem: `Produto não encontrado com o ID: ${id}` });
+    }
+
+    getImageById = async (req, res) => {
+        const { id } = req.params;
+        const filePath = `${process.cwd()}/assets/produto_${id}.jpg`;
+
+        console.log(filePath);
+        return res.sendFile(filePath);
     }
 
     getByCategory = async (req, res) => {

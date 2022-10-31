@@ -1,6 +1,6 @@
 const express = require("express");
-// const helmet = require("helmet");
-// const cors = require("cors");
+const helmet = require("helmet");
+const cors = require("cors");
 
 module.exports = class App {
     constructor(port, controllers = []) {
@@ -13,8 +13,11 @@ module.exports = class App {
     }
 
     initializeMiddlewares() {
-        // this.app.use(helmet());
-        // this.app.use(cors());
+        this.app.use(helmet());
+        this.app.use(cors({
+            origin: "*",
+            optionsSuccessStatus: 200
+        }));
         this.app.use(express.json());
     }
 

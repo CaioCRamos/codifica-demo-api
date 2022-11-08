@@ -1,22 +1,22 @@
 const express = require("express")
-
-const ProductsRepository = require("./products.repository");
 const ProductsAdapter = require("./products.adapter");
+const ProductRepository = require("./products.repository");
 
 module.exports = class ProductsController {
-    constructor() {
+    constructor(source) {
+        this.source = source;
         this.router = express.Router();
-        this.repository = new ProductsRepository();
-        this.adapter = new ProductsAdapter();
+        this.repository = new ProductRepository(source);
+        this.adapter = new ProductsAdapter(source);
 
         this.initializeRoutes();
     }
 
     initializeRoutes() {
-        this.router.get("/products", this.getAll);
-        this.router.get("/products/:id", this.getById);
-        this.router.get("/products/:id/image", this.getImageById);
-        this.router.get("/products/category/:category", this.getByCategory);
+        this.router.get("/", this.getAll);
+        this.router.get("/:id", this.getById);
+        this.router.get("/:id/image", this.getImageById);
+        this.router.get("/category/:category", this.getByCategory);
     }
 
     getAll = async (req, res) => {
@@ -39,10 +39,11 @@ module.exports = class ProductsController {
 
     getImageById = async (req, res) => {
         const { id } = req.params;
-        const filePath = `${process.cwd()}/assets/produto_${id}.jpg`;
+        const product = this.repository.getById(parseInt(id));
 
-        console.log(filePath);
-        return res.sendFile(filePath);
+        return product
+            ? res.status(200).sendFile(`${process.cwd()}/assets/${this.source}/${product.img}`)
+            : res.status(404).json({ mensagem: `Produto não encontrado com o ID: ${id}` });
     }
 
     getByCategory = async (req, res) => {

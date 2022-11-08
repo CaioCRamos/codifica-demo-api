@@ -25,8 +25,8 @@ module.exports = class App {
             res.status(200).json({ nome: "Demo API", versao: "1.0" });
         });
 
-        this.controllers.forEach((controller) => {
-            this.app.use("/api/v1/", controller.router);
+        this.controllers.forEach((c) => {
+            this.app.use(c.path, c.controller.router);
         });
     }
 

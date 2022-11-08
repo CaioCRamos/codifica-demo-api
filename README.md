@@ -116,10 +116,10 @@ Resultado negativo (`404`):
 }
 ```
 
-### 4️⃣ Produtos
+### 4️⃣.1️⃣ Produtos (Petshop)
 Endpoint que retorna a listagem completa de produtos disponíveis.
 
-- URL: https://codifica-demo-api.herokuapp.com/api/v1/products
+- URL: https://codifica-demo-api.herokuapp.com/api/v2/petshop/products
 - Verbo: `GET`
 
 Resultado (`200`):
@@ -128,46 +128,50 @@ Resultado (`200`):
   {
     "id": 0,
     "nome": "Ração Seca Nutrilus Pro Frango & Carne para Cães Adultos",
-    "img": "https://www.petlove.com.br/images/products/250507/large/2492303_FRENTE.jpg?1635780028",
+    "img": "https://codifica-demo-api.herokuapp.com/api/v2/petshop/products/0/image",
     "preco": 169.01,
     "categoria": "racao",
     "descricao": "A Ração Seca Nutrilus..."
-  },
-  {
-    "id": 1,
-    "nome": "Ração Magnus Todo Dia Sabor Carne para Cães Adultos",
-    "img": "https://www.petlove.com.br/images/products/225830/large/Ra%C3%A7%C3%A3o_Magnus_Todo_Dia_Sabor_Carne_para_C%C3%A3es_Adultos_311810.jpg?1627724051",
-    "preco": 201.9,
-    "categoria": "racao",
-    "descricao": "A Ração Magnus Todo Dia..."
-  },
-  {
-    "id": 2,
-    "nome": "Ração Seca True para Cães Adultos Raças Médias e Grandes",
-    "img": "https://www.petlove.com.br/images/products/255531/product/Ra%C3%A7%C3%A3o_Seca_True_para_C%C3%A3es_Adultos_Ra%C3%A7as_M%C3%A9dias_e_Grandes_10_1KG_2638254.png?1653046196",
-    "preco": 227.92,
-    "categoria": "racao",
-    "descricao": "A Ração Seca True para Cães Adultos..."
   },
   ...
 ]
 ```
 
-### 5️⃣ Produto por ID
+### 4️⃣.2️⃣ Produtos (Diário de Um Banana)
+Endpoint que retorna a listagem completa de produtos disponíveis.
+
+- URL: https://codifica-demo-api.herokuapp.com/api/v2/diariodeumbanana/products
+- Verbo: `GET`
+
+Resultado (`200`):
+```json
+[
+  {
+    "id": 1,
+    "nome": "Diário de um Banana",
+    "img": "https://codifica-demo-api.herokuapp.com/api/v2/diariodeumbanana/products/1/image",
+    "preco": 27.52,
+    "categoria": "livro"
+  },
+  ...
+]
+```
+
+### 5️⃣.1️⃣ Produto por ID (Petshop)
 Endpoint que retorna um produto, de acordo com o `ID` fornecido.
 
-- URL: https://codifica-demo-api.herokuapp.com/api/v1/products/:id
+- URL: https://codifica-demo-api.herokuapp.com/api/v2/petshop/products/:id
 - Verbo: `GET`
 
 Para consultar o produto de `ID = 10`:  
-- https://codifica-demo-api.herokuapp.com/api/v1/products/10
+- https://codifica-demo-api.herokuapp.com/api/v2/petshop/products/10
 
 Resultado (`200`):
 ```json
 {
   "id": 10,
   "nome": "Comedouro e Bebedouro Duplo em Inox com Suporte",
-  "img": "https://www.petlove.com.br/images/products/187462/product/31010152.jpg?1627607228",
+  "img": "https://codifica-demo-api.herokuapp.com/api/v2/petshop/products/10/image",
   "preco": 54.89,
   "categoria": "acessoriosAlimentacao",
   "descricao": "O Comedouro Duplo Inox com Suporte..."
@@ -175,7 +179,7 @@ Resultado (`200`):
 ```
 
 Se o `ID` não for encontrado o resultado será:  
-- https://codifica-demo-api.herokuapp.com/api/v1/products/100
+- https://codifica-demo-api.herokuapp.com/api/v2/petshop/products/100
 
 Resultado (`404`):
 ```json
@@ -184,14 +188,44 @@ Resultado (`404`):
 }
 ```
 
-### 6️⃣ Produtos por Categoria
+### 5️⃣.2️⃣ Produto por ID (Diário de Um Banana)
+Endpoint que retorna um produto, de acordo com o `ID` fornecido.
+
+- URL: https://codifica-demo-api.herokuapp.com/api/v2/diariodeumbanana/products/:id
+- Verbo: `GET`
+
+Para consultar o produto de `ID = 10`:  
+- https://codifica-demo-api.herokuapp.com/api/v2/diariodeumbanana/products/10
+
+Resultado (`200`):
+```json
+{
+ "id": 10,
+  "nome": "Diario de um Banana 10: Bons Tempos",
+  "img": "https://codifica-demo-api.herokuapp.com/api/v2/diariodeumbanana/products/10/image",
+  "preco": 27.49,
+  "categoria": "livro"
+}
+```
+
+Se o `ID` não for encontrado o resultado será:  
+- https://codifica-demo-api.herokuapp.com/api/v2/diariodeumbanana/products/100
+
+Resultado (`404`):
+```json
+{
+  "mensagem": "Produto não encontrado com o ID: 100"
+}
+```
+
+### 6️⃣.1️⃣ Produtos por Categoria (Petshop)
 Endpoint que retorna a listagem de produtos disponíveis por Categoria fornecida.
 
-- URL: https://codifica-demo-api.herokuapp.com/api/v1/products/category/:category
+- URL: https://codifica-demo-api.herokuapp.com/api/v2/petshop/products/category/:category
 - Verbo: `GET`
 
 Para consultar os produtos da Categoria `racao`:  
-- https://codifica-demo-api.herokuapp.com/api/v1/products/category/racao
+- https://codifica-demo-api.herokuapp.com/api/v2/petshop/products/category/racao
 
 Resultado (`200`):
 ```json
@@ -199,26 +233,38 @@ Resultado (`200`):
   {
     "id": 0,
     "nome": "Ração Seca Nutrilus Pro Frango & Carne para Cães Adultos",
-    "img": "https://www.petlove.com.br/images/products/250507/large/2492303_FRENTE.jpg?1635780028",
+    "img": "https://codifica-demo-api.herokuapp.com/api/v2/petshop/products/0/image",
     "preco": 169.01,
     "categoria": "racao",
     "descricao": "A Ração Seca Nutrilus..."
   },
+  ...
+]
+```
+
+Se nenhum resultado for encontrado um array vazio será retornado:
+```json
+[]
+```
+
+### 6️⃣.2️⃣ Produtos por Categoria (Diário de Um Banana)
+Endpoint que retorna a listagem de produtos disponíveis por Categoria fornecida.
+
+- URL: https://codifica-demo-api.herokuapp.com/api/v2/diariodeumbanana/products/category/:category
+- Verbo: `GET`
+
+Para consultar os produtos da Categoria `camiseta`:  
+- https://codifica-demo-api.herokuapp.com/api/v2/diariodeumbanana/products/category/camiseta
+
+Resultado (`200`):
+```json
+[
   {
-    "id": 1,
-    "nome": "Ração Magnus Todo Dia Sabor Carne para Cães Adultos",
-    "img": "https://www.petlove.com.br/images/products/225830/large/Ra%C3%A7%C3%A3o_Magnus_Todo_Dia_Sabor_Carne_para_C%C3%A3es_Adultos_311810.jpg?1627724051",
-    "preco": 201.9,
-    "categoria": "racao",
-    "descricao": "A Ração Magnus Todo Dia..."
-  },
-  {
-    "id": 2,
-    "nome": "Ração Seca True para Cães Adultos Raças Médias e Grandes",
-    "img": "https://www.petlove.com.br/images/products/255531/product/Ra%C3%A7%C3%A3o_Seca_True_para_C%C3%A3es_Adultos_Ra%C3%A7as_M%C3%A9dias_e_Grandes_10_1KG_2638254.png?1653046196",
-    "preco": 227.92,
-    "categoria": "racao",
-    "descricao": "A Ração Seca True para Cães Adultos..."
+    "id": 23,
+    "nome": "Camiseta Diário de um Banana",
+    "img": "https://codifica-demo-api.herokuapp.com/api/v2/diariodeumbanana/products/23/image",
+    "preco": 42.99,
+    "categoria": "camiseta"
   },
   ...
 ]

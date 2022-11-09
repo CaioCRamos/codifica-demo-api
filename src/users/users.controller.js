@@ -10,8 +10,8 @@ module.exports = class UserController {
     }
 
     initializeRoutes() {
-        this.router.get("/users", this.getAll);
-        this.router.post("/users/login", this.authenticate);
+        this.router.get("/", this.getAll);
+        this.router.post("/login", this.authenticate);
     }
 
     getAll = async (req, res) => {

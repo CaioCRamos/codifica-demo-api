@@ -1,7 +1,7 @@
 # Codifica - Demo API
 
 **API** bem simples construída utilizando **Node.JS** para introduzir e praticar os seguintes assuntos:
-
+asdjfçladsfjçalsdkf
 - APIs
 - Comunicação Front x Back
 - HTTP e principais verbos (GET, POST, PUT, DELETE)

@@ -1,196 +1,168 @@
 [
     {
         "id": 1,
-        "img": "1.jpg",
         "nome": "Diário de um Banana",
         "preco": 27.52,
         "categoria": "livro"
     },
     {
         "id": 2,
-        "img": "2.jpg",
         "nome": "Diario de um Banana 2: Rodrick é o cara",
         "preco": 28.45,
         "categoria": "livro"
     },
     {
         "id": 3,
-        "img": "3.jpg",
         "nome": "Diario de um Banana 3: A Gota D'Água",
         "preco": 28.11,
         "categoria": "livro"
     },
     {
         "id": 4,
-        "img": "4.jpg",
         "nome": "Diario de um Banana 4: Dias De Cão",
         "preco": 25.23,
         "categoria": "livro"
     },
     {
         "id": 5,
-        "img": "5.jpg",
         "nome": "Diario de um Banana 5: A Verdade Nua e Crua",
         "preco": 25.92,
         "categoria": "livro"
     },
     {
         "id": 6,
-        "img": "6.jpg",
         "nome": "Diario de um Banana 6: Casa dos Horrores",
         "preco": 26.90,
         "categoria": "livro"
     },
     {
         "id": 7,
-        "img": "7.jpg",
         "nome": "Diario de um Banana 7: Segurando Vela",
         "preco": 30.73,
         "categoria": "livro"
     },
     {
         "id": 8,
-        "img": "8.jpg",
         "nome": "Diario de um Banana 8: Maré de Azar",
         "preco": 28.68,
         "categoria": "livro"
     },
     {
         "id": 9,
-        "img": "9.jpg",
         "nome": "Diario de um Banana 9: Caindo na estrada",
         "preco": 31.37,
         "categoria": "livro"
     },
     {
         "id": 10,
-        "img": "10.jpg",
         "nome": "Diario de um Banana 10: Bons Tempos",
         "preco": 27.49,
         "categoria": "livro"
     },
     {
         "id": 11,
-        "img": "11.jpg",
         "nome": "Diario de um Banana 11: Vai ou Racha",
         "preco": 28.99,
         "categoria": "livro"
     },
     {
         "id": 12,
-        "img": "12.jpg",
         "nome": "Diario de um Banana 12: Apertem Os Cintos",
         "preco": 37.20,
         "categoria": "livro"
     },
     {
         "id": 13,
-        "img": "13.jpg",
         "nome": "Diario de um Banana 13: Batalha Neval",
         "preco": 33.97,
         "categoria": "livro"
     },
     {
         "id": 14,
-        "img": "14.jpg",
         "nome": "Diario de um Banana 14: Quebra Tudo",
         "preco": 35.00,
         "categoria": "livro"
     },
     {
         "id": 15,
-        "img": "15.jpg",
         "nome": "Diario de um Banana 15: Vai Fundo",
         "preco": 29.78,
         "categoria": "livro"
     },
     {
         "id": 16,
-        "img": "16.jpg",
         "nome": "Diario de um Banana 16: Bola Fora",
         "preco": 43.63,
         "categoria": "livro"
     },
     {
         "id": 17,
-        "img": "17.jpg",
         "nome": "Diario de um Banana 17: Fräwda Megaxeia",
         "preco": 50.35,
         "categoria": "livro"
     },
     {
         "id": 18,
-        "img": "18.jpg",
         "nome": "Diário de um Banana: Faça Você Mesmo",
         "preco": 39.56,
         "categoria": "livro"
     },
     {
         "id": 19,
-        "img": "19.jpg",
         "nome": "Diário de um Banana DVD",
         "preco": 40.50,
         "categoria": "filme"
     },
     {
         "id": 20,
-        "img": "20.jpg",
         "nome": "Diário de Um Banana  2 - Rodrick é o Cara! DVD",
         "preco": 31.61,
         "categoria": "filme"
     },
     {
         "id": 21,
-        "img": "21.jpg",
         "nome": "Diário de um Banana 3: Dias de Cão DVD",
         "preco": 37.56,
         "categoria": "filme"
     },
     {
         "id": 22,
-        "img": "22.jpg",
         "nome": "Diário de um Banana 4: Caindo na Estrada DVD",
         "preco": 32.75,
         "categoria": "filme"
     },
     {
         "id": 23,
-        "img": "23.png",
         "nome": "Camiseta Diário de um Banana",
         "preco": 42.99,
         "categoria": "camiseta"
     },
     {
         "id": 24,
-        "img": "24.png",
         "nome": "Camiseta Unissex Banda Frawda Xeia",
         "preco": 45.99,
         "categoria": "camiseta"
     },
     {
         "id": 25,
-        "img": "25.png",
         "nome": "Camiseta Masculina Banda Frawda Xeia",
         "preco": 49.99,
         "categoria": "camiseta"
     },
     {
         "id": 26,
-        "img": "26.png",
         "nome": "Camiseta Feminina Banda Frawda Xeia",
         "preco": 49.99,
         "categoria": "camiseta"
     },
     {
         "id": 27,
-        "img": "27.png",
         "nome": "Camiseta Infantil Diário de um Banana",
         "preco": 39.99,
         "categoria": "camiseta"
     },
     {
         "id": 28,
-        "img": "28.jpg",
         "nome": "Coleção Marcadores de página",
         "preco": 11.75,
         "categoria": "extra"

@@ -157,6 +157,36 @@ Resultado (`200`):
 ]
 ```
 
+### 4️⃣.3️⃣ Produtos (Street Wear)
+Endpoint que retorna a listagem completa de produtos disponíveis.
+
+- URL: https://codifica-demo-api.herokuapp.com/api/v2/streetwear/products
+- Verbo: `GET`
+
+Resultado (`200`):
+```json
+[
+  {
+    "nome": "Camiseta FIRST-CLASS",
+    "img": "https://img.ltwebstatic.com/images3_pi/2022/08/18/16608080488a4579385b6f50105e9f11ec9f2844ee_thumbnail_600x.webp",
+    "img2": "https://img.ltwebstatic.com/images3_pi/2022/08/18/1660808050767132598e7d8b92770941f67d4ea6cc_thumbnail_600x.webp",
+    "preco": 47.99,
+    "categoria": [
+      "camiseta",
+      "masculino",
+      "lançamento"
+    ],
+    "tamanho": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ]
+  },
+  ...
+]
+```
+
 ### 5️⃣.1️⃣ Produto por ID (Petshop)
 Endpoint que retorna um produto, de acordo com o `ID` fornecido.
 

@@ -42,7 +42,7 @@ module.exports = class ProductsController {
         const product = this.repository.getById(parseInt(id));
 
         return product
-            ? res.status(200).sendFile(`${process.cwd()}/assets/${this.source}/${product.img}`)
+            ? res.status(200).sendFile(`${process.cwd()}/assets/${this.source}/${product.id}.jpg`)
             : res.status(404).json({ mensagem: `Produto não encontrado com o ID: ${id}` });
     }
 

@@ -41,6 +41,8 @@ module.exports = class ProductsController {
         const { id } = req.params;
         const product = this.repository.getById(parseInt(id));
 
+        res.header('Cache-Control', 'max-age=2592000000');
+
         return product
             ? res.status(200).sendFile(`${process.cwd()}/assets/${this.source}/${product.id}.jpg`)
             : res.status(404).json({ mensagem: `Produto não encontrado com o ID: ${id}` });

@@ -16,7 +16,15 @@ module.exports = class App {
         this.app.use(helmet({
             crossOriginResourcePolicy: false,
         }));
-        this.app.use(cors());
+
+        const corsOptions = {
+            origin: '*',
+            credentials: true,            //access-control-allow-credentials:true
+            optionSuccessStatus: 200,
+        }
+
+        this.app.use(cors(corsOptions))
+
         this.app.use(express.json());
     }
 
